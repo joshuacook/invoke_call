@@ -7,6 +7,7 @@ class InvokeCallTest < Minitest::Test
   end
   
   def test_cli
+    skip
     assert_silent {InvokeCall.cli("8555550053","8055551212","staging-collapsed-jc1.ringrevenue.net","wait 5, press 1, wait 5")}
   end
 end 
