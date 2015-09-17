@@ -7,7 +7,7 @@ A ruby wrapped command line tool for placing phone calls.
 ### Install The Gem
 
 ```bash
-gem specific_install https://github.com/invoca/invocall.git
+gem specific_install https://github.com/joshuacook/invoke_call.git
 ```
 
 ### Compile necessary binaries
