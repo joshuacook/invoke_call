@@ -21,8 +21,9 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = %w[invoke_call]
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib", "lib/invoke_call"]
 
+  spec.add_dependency 'thor'
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
 end
