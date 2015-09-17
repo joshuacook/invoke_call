@@ -4,14 +4,15 @@ IFS=$'\n\t'
 
 bundle install
 
-curl "http://www.pjsip.org/release/2.4.5/pjproject-2.4.5.tar.bz2" -o "pjproject-2.4.5.tar.bz2"
-tar -xjf pjproject-2.4.5.tar.bz2
-rm pjproject-2.4.5.tar.bz2
+version="2.4.5"
+curl "http://www.pjsip.org/release/${version}/pjproject-${version}.tar.bz2" -o "pjproject-${version}.tar.bz2"
+tar -xjf pjproject-${version}.tar.bz2
+rm pjproject-${version}.tar.bz2
 
-cd pjproject*
+cd pjproject-${version}
 ./configure
 make dep && make && make install
 cp pjsip-apps/bin/samples/x86_64-apple-darwin*/auddemo /usr/local/bin/audtool
 cp pjsip-apps/bin/pjsua* /usr/local/bin/pjsua
 
-rm -rf pjproject*
+rm -rf pjproject-${version}{,.tar.bz2}
