@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+bundle install
+
+curl "http://www.pjsip.org/release/2.4.5/pjproject-2.4.5.tar.bz2" -o "pjproject-2.4.5.tar.bz2"
+tar -xjf pjproject-2.4.5.tar.bz2
+rm pjproject-2.4.5.tar.bz2
+
+cd pjproject*
+./configure
+make dep && make && make install
+cp pjsip-apps/bin/samples/x86_64-apple-darwin*/auddemo /usr/local/bin/audtool
+cp pjsip-apps/bin/pjsua* /usr/local/bin/pjsua
+
+rm -rf pjproject*
