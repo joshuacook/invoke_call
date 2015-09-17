@@ -32,7 +32,7 @@ would place the call, wait five seconds, send a keypress of 1, wait 5 seconds, s
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'invocall', :git => 'git://github.com/invoca/invocall.git'
+gem 'invoke_call', :git => 'git://github.com/joshuacook/invoke_call.git'
 ```
 
 Add the following to your `.rb` file
