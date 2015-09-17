@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'invoke_call'
+
+InvokeCall.cli(ARGV[0],ARGV[1],ARGV[2],ARGV[3])

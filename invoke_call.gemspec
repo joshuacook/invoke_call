@@ -6,6 +6,7 @@ require 'invoke_call/version'
 Gem::Specification.new do |spec|
   spec.name          = "invoke_call"
   spec.version       = InvokeCall::VERSION
+  spec.executables   = "invoke_call"
   spec.authors       = ["Joshua Cook"]
   spec.email         = ["jcook@invoca.com"]
 

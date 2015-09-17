@@ -9,11 +9,11 @@ module InvokeCall
       client_number = config['client_number'] 
     end
     
-    id = `(echo q) | audtool | grep 'Built-in Output'`
-
+    audio_card_id = find_audio_card
+    
     @scenario = ""
     instance_exec(&block)
-    catch_output = `(#{@scenario}) | pjsua sip:#{promo_number}@#{ringswitch_node}.ringrevenue.net --log-level=0 --use-cli --id sip:#{client_number}@invoca.com --playback-dev=#{id[2..2]}`
+    `(#{@scenario}) | pjsua sip:#{promo_number}@#{ringswitch_node} --log-level=0 --use-cli --id sip:#{client_number}@invoca.com --playback-dev=#{audio_card_id}`
   end
   
   def self.wait(seconds)
@@ -22,5 +22,20 @@ module InvokeCall
   
   def self.press(tone)
     @scenario += "echo '# #{tone}'; "
+  end
+  
+  def self.find_audio_card
+    built_in_audio_card_id = `(echo q) | audtool | grep 'Built-in Output'`
+    built_in_audio_card_id[2..2].to_i
+  end
+  
+  def self.cli(promo_number, client_number, ringswitch_node, cli_scenario)
+    audio_card_id = find_audio_card
+    
+    cli_scenario = cli_scenario.gsub(/wait/,'sleep')
+    cli_scenario = cli_scenario.gsub(/press (\d)/, 'echo "# \1"')
+    cli_scenario = cli_scenario.gsub(/,/, ';')   
+    cli_scenario += '; echo h'    
+    exit_status = system("(#{cli_scenario}) | pjsua sip:#{promo_number}@#{ringswitch_node} --log-level=0 --use-cli --id sip:#{client_number}@invoca.com --playback-dev=#{audio_card_id}")
   end
 end
