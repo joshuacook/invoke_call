@@ -1,4 +1,4 @@
-# Invocall
+# Invoke Call
 
 A ruby wrapped command line tool for placing phone calls.
 
@@ -51,7 +51,8 @@ call_phone_number("<NUMBER BEING CALLED>",{'ringswitch_node' => "<RINGSWITCH>", 
 }
 ```
 
-Note the variation in syntax. In a script, the scenario is passed as a block. For example, 
+Note the variation in syntax. In a script, configuration variables are passed as JSON and the scenario is passed as a block. For example, 
+
 
 ```ruby
 require_relative 'invoke_call'
