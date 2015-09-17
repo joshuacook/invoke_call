@@ -4,13 +4,19 @@ A ruby wrapped command line tool for placing phone calls.
 
 ## Installation
 
-### Install The Gem
+### Pull the Repo Locally and Install the Gem
 
 ```bash
-gem specific_install https://github.com/joshuacook/invoke_call.git
+$ git clone https://github.com/joshuacook/invoke_call.git
+$ rake build
+$ rake install
 ```
 
 ### Compile necessary binaries
+
+```bash
+$ rake compile_binaries
+```
 
 ## Usage 
 

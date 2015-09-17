@@ -7,3 +7,8 @@ end
 
 desc "Run tests"
 task :default => :test
+
+task :compile_binaries do
+  `bin/setup`
+end
+
