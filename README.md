@@ -9,6 +9,7 @@ A ruby wrapped command line tool for placing phone calls.
 ```bash
 $ git clone https://github.com/joshuacook/invoke_call.git
 $ cd invoke_call
+$ bundle update
 $ bundle install
 $ rake build
 $ gem install pkg/invoke_call-0.1.0.gem
@@ -19,6 +20,8 @@ $ gem install pkg/invoke_call-0.1.0.gem
 ```bash
 $ rake compile_binaries
 ```
+
+May (will probably) throw a ton of warnings. As long as it doens't fail all is good. 
 
 ## Usage 
 
