@@ -36,7 +36,7 @@ Call scenarios should be a string consisting only of the keywords `wait` and `pr
 e.g. 
 
 ```bash
-$ invoke_call --promo-number=8885551212 --client-number=8055551212 --ringswith-node=54.54.54.54 --call-scenario="wait 5, press 1, wait 5, press 3, wait 5"
+$ invoke_call sip --promo-number=8885551212 --client-number=8055551212 --ringswith-node=54.54.54.54 --call-scenario="wait 5, press 1, wait 5, press 3, wait 5"
 ```
 
 would place the call, wait five seconds, send a keypress of 1, wait 5 seconds, send a keypress of 3, wait 5 seconds, and then hang up.
