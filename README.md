@@ -8,6 +8,9 @@ A ruby wrapped command line tool for placing phone calls.
 
 ```bash
 $ git clone https://github.com/joshuacook/invoke_call.git
+$ cd invoke_call
+$ bundle update
+$ bundle install
 $ rake build
 $ gem install pkg/invoke_call-0.1.0.gem
 ```
@@ -18,12 +21,14 @@ $ gem install pkg/invoke_call-0.1.0.gem
 $ rake compile_binaries
 ```
 
+May (will probably) throw a ton of warnings. As long as it doens't fail all is good. 
+
 ## Usage 
 
 ### General Usage
 
 ```bash 
-$ invoke_call sip --promo-number=<NUMBER BEING CALLED> --client-number=<NUMBER CALLING FROM> --ringswith-node=<RINGSWITCH> --call-scenario=<CALL SCENARIO>
+$ invoke_call sip --promo-number=<NUMBER BEING CALLED> --client-number=<NUMBER CALLING FROM> --ringswitch-node=<RINGSWITCH> --call-scenario=<CALL SCENARIO>
 ```
 
 Call scenarios should be a string consisting only of the keywords `wait` and `press`, each accompanied by an integer. 
@@ -31,7 +36,7 @@ Call scenarios should be a string consisting only of the keywords `wait` and `pr
 e.g. 
 
 ```bash
-$ invoke_call --promo-number=8885551212 --client-number=8055551212 --ringswith-node=54.54.54.54 --call-scenario="wait 5, press 1, wait 5, press 3, wait 5"
+$ invoke_call sip --promo-number=8885551212 --client-number=8055551212 --ringswitch-node=54.54.54.54 --call-scenario="wait 5, press 1, wait 5, press 3, wait 5"
 ```
 
 would place the call, wait five seconds, send a keypress of 1, wait 5 seconds, send a keypress of 3, wait 5 seconds, and then hang up.
