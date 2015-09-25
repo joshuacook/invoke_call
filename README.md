@@ -23,6 +23,8 @@ $ rake compile_binaries
 
 May (will probably) throw a ton of warnings. As long as it doens't fail all is good. 
 
+You will have to source your bash profile to include the command line tool.
+
 ## Usage 
 
 ### General Usage
