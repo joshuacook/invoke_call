@@ -11,7 +11,7 @@ module InvokeCall
     Uses the pjsip library to place a sip call to a sip number at a specific sip server.
     PLACE_SIP_CALL
     
-		def singleton
+		def sip
 			audio_card_id   = InvokeCall.find_audio_card
 		  call_scenario   = options[:call_scenario]
 		  promo_number    = options[:promo_number]
