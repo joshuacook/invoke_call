@@ -9,19 +9,13 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Joshua Cook"]
   spec.email         = ["jcook@invoca.com"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{Provides a simple wrapper for placing calls using pjsua and a dsl for defining call scenarios.}
-  spec.description   = %q{}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = %w[invoke_call]
-  spec.require_paths = ["lib", "lib/invoke_call"]
+  spec.files        += Dir.glob("{lib,bin}/**/*")
+  spec.executables   = 'invoke_call'
+  spec.require_paths = ["lib"]
 
   spec.add_dependency 'thor'
   spec.add_development_dependency "bundler", "~> 1.8"
